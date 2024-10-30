@@ -1,0 +1,471 @@
+<h3 class="center alt">jQueryFacebookWallWPLight Documentation by Lorenzo Gangi v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">jQueryFacebookWallWPLight
+<h3>jQueryFacebookWallWPLight for Word Press <a href="http://codecanyon.net/item/jqueryfacebookwall-wordpress/5574064"><b>Buy the Pro Version Here</b></a></h3>
+</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 12/12/2014<br>
+					By: Lorenzo Gangi<br>
+					Email: lorenzo@ironlasso.com</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for downloading my Wordpress plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/ludicrisMaximus">here</a> or at <a href="http://ironlasso.com/contact-2/">ironlasso.com</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#requirements">Requirements</a></li>
+			<li><a href="#overview">Overview</a></li>
+			<li><a href="#getting-started">Getting Started / Installation</a></li>
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+            <li><a href="#cssFiles">CSS Files and Structure</a></li>
+            <li><a href="#javascript">JavaScript</a></li>
+            <li><a href="#credits">Sources and Credits</a></li>
+            <li><a href="#api">Shortcodes / Usage</a> </li>
+            <li><a href="#plugin-options">Plugin Settings</a></li>
+            <li><a href="#facebook">Getting Data from Facebook</a>
+            	<ol>
+                	<li><a href="#fb-account">Get your Facebook Account Name</a></li>
+                	<li><a href="#fb-app">Create / Get your Facebook Account App Id/Key and Secret</a></li>
+                	<li><a href="#fb-access-token">Get your Facebook Access Token</a></li>
+                	<li><a href="#fb-pages">Facebook Pages vs. Facebook User Accounts</a></li>
+                </ol>
+            </li>
+            <li><a href="#IIS">*Using the plugin on Windows IIS</a></li>
+		</ol>
+<hr>
+<h3 id="requirements"><strong>Requirements</strong> - <a href="#toc">top</a></h3>		
+		jQueryFacebookWallWPLight requires:
+<ol>
+            	<li>jQuery 1.7 or above</li>
+        		<li>WordPress 3.5.1</li>
+        		<li>PHP 5</li>
+        	</ol>
+<hr>
+<h3 id='overview'><strong>Overview</strong> - <a href="#toc">top</a></h3>
+<p>jQueryFacebookWallWPLight (JQFW-WPL) is Wordpress plugin that will retrieve your Facebook account data and build a Facebook styled feed on any website. JQFW-WPL provides a couple of features, pro version featrues are denoted by *:</p>
+<ul>
+  <li><strong>JQFW-WPL limits</strong> the number of posts and comments you can retrieve from facebook to 5.</li>
+  <li><strong>Three theme styles</strong> for displaying your Facebook data. There is a <a href='http://ironlasso.com/jQueryFacebookWall/single-column.html'>single column style theme</a>, <a href='http://ironlasso.com/jQueryFacebookWall/index.html'>timeline style theme</a>, and <a href='http://ironlasso.com/jQueryFacebookWall/wall.html'>*wall style theme</a> this can be set in <a href='#plugin-settings'>your plugin settings</a>. </li>
+  <li><strong>*Events Section</strong> that shows your Facebook events title, date, and description.</li>
+  <li><strong>*Albums Section</strong> that shows your Facebook albums, and links to a light box to browse the photos.</li>
+  <li><strong>*Photos Section</strong> that shows you Facebook timeline photos.</li>
+  <li><strong>*A Facebook style lightbox</strong> to browse your album and photo gallery.</li>
+  <li><strong>*Likes Section</strong> that shows your Facebook accounts likes.</li>
+  <li><strong>*Comments</strong> such that you can comment on any post that JQFW-WPL displays. You can also post comments on album and photos images in the lightbox.</li>
+  <li><strong>Likes</strong> so you can like posts,  *comments, and  *album images.</li>
+</ul>
+<p><a href="http://codecanyon.net/item/jqueryfacebookwall-wordpress/5574064"><b>Buy the Pro Version Here</b></a></p>
+<hr>
+        
+		<h3 id="getting-started"><strong>Getting Started</strong> - <a href="#toc">top</a></h3>
+		<p> Follow these instructions to get your Facebook feed on your website. When you downloaded JQFW-WPL you got a file called jQueryFacebookWallWPLight_download.zip</p>
+		<ol>
+		  <li><strong>unzip jQueryFacebookWallWPLight_download.zip </strong></li>
+		  <li><strong>Its contents should look this</strong>:
+<pre>
+/docImages
+readme.html
+readme.txt
+/jQueryFacebookWallWPLight.ZIP
+  /css
+  /images
+  /js
+  /licensing
+  /template
+  fb_app_token.php
+  fb_get_app_token.php
+  uninstall.php
+  jQueryFacebookWallLight.php
+	            </pre>
+		  </li>
+    	  <li><strong>Install your plugin</strong> - Go to the Plugins page of your wordpress admin.
+<ol>
+      <li>Click the &quot;Add New&quot; button this wil take you to the Intall Plugins page.</li>
+    	      <li>Click the &quot;Upload&quot; link on the Install Plugins page.</li>
+    	      <li>Choose the jQueryFacebookWallWPLight.zip and click the &quot;Install Now&quot; button. You should see a message about unpacking and installing your plugin.</li>
+    	      <li>Click the &quot;Activate Plugin&quot; Link this should take you back to your plugins page.</li>
+          </ol>          
+    	  <li><strong>Configure your plugin</strong> - Click the &quot;settings&quot; link in the jQueryFacebookWallLight row.</li>
+    	  <li><strong>Enter the Domain name of the website</strong> where the plugin is installed in the field labeled<strong> Domain</strong>.</li>
+    	  <li><a href='#get-your-facebook-account-name'><strong>Get your Facebook Account Name</strong></a> and enter it in the field labeld <b>Facebook User</b>.</li>          
+		  <li><a href='#facebook-app'><strong>Get / Create your Facebook Account App Id/Key and Secret</strong></a>
+		    <ol>
+		      <li>
+              	
+                Find App ID and App Secret fields and Retrieve Button
+              	  <p><img src="docImages/wpAppTokenForm.png" /></p>
+              </li>
+		      <li>
+              	Enter your App ID and App Secret and click the &quot;Retrieve Facebook App Access Token&quot; Button.
+              	<p><img src="docImages/wpAppTokenFormDone.png" /></p>
+              </li>
+		      <li>if your app token retrieval fails see <a href='#facebook-access-token'>Get your Facebook Access Token</a></li>
+	        </ol>
+		  </li>
+		  <li>
+          	<strong>Save your settings</strong>. Click the button on the bottom of the settings page that says <strong>&quot;Save jQueryFacebookWall Settings&quot;</strong>
+          	<p>settings example - this will show the National Geographic facebook feed.</p>
+			<p><img src="docImages/generalSettings.png" style="width:1200px" /></p>
+          </li>
+		  <li>
+          	<strong>Add a Facebook feed to a page or post</strong>. In the wp-admin navigate to the page or post you would like to JQFW-WPL to and past the short code [jfw_light show=jQueryFacebookWallLight] in the content editor. Save and navigate to the page you should see your facebook feed.
+          	<p><img src="docImages/wpShortCode.png" /></p>
+          </li>
+		  <li><strong>Adjust Plugin Settings</strong> - At this point your plugin is ready to go, however you can adjust the the other plugin settings as needed. See the *<a href="#plugin-options">Plugin Settings</a> section for details on settings function.</li>
+</ol>
+		
+		<p>&nbsp;</p>
+<hr>
+		    
+		    <h3 id="htmlStructure"><strong>HTML Structure</strong> - <a href="#toc">top</a></h3>
+		    <p>All HTML created by the plugin is contained in &lt;div class='facebook-wall' /&gt; The plugin creates a two-column layout. Events, albums, photos, and likes are always placed in the right column. Posts are placed in in the left column for the <em>wall</em> style feed (which you can set in your settingss) and are placed in both the left and right columns alternating. The plugin also provides a light box to browse photo albums. The containing &lt;div&gt; for this is appended to the end of the parent .facebook-wall</p>
+		    <p>Most of the HTML is managed via .ejs template files. See <a href="http://embeddedjs.com/">http://embeddedjs.com/</a> if you are interested in how that works. All of the template files can be found in <em>yourPluginsDirectory</em>/jQueryFacebookWallWPLight/templates/ if you should ever need to make any changes. In that directory you will find templates for:</p>
+		    <ul>
+		      <li><strong>*Albums Section</strong> - albums.ejs</li>
+		      <li><strong>*Photos Section</strong> - photos.ejs</li>
+		      <li><strong>*Post and Image Comments</strong> - comments.ejs</li>
+		      <li><strong>*Events Section</strong> - events.ejs</li>
+		      <li><strong>*Likes Section</strong> - likes.ejs</li>
+		      <li><strong>*Light Box</strong> - photoGallery.ejs</li>
+		      <li><strong>Posts</strong> - story.ejs</li>
+	        </ul>
+		    <p>&nbsp;</p>
+		    <hr>
+		    
+<h3 id="cssFiles"><strong>CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+		    
+		    <p>All plugin CSS is located in the <em>yourPluginsDirectory</em>/jQueryFacebookWallWPLight/CSS/jQueryFacebookWallWPLight.css Only the minified version is available with JWF-WPL</p>
+		    <p>The CSS document is divided five main parts:</p>
+            <ol>
+		    <li><strong>Shared Rules</strong> - These are used by both the timeline and wall styled feed.</li>
+		    <li><strong>Timeline Rules</strong> - These are the rules used to style the timeline style feed.</li>
+		    <li><strong>Wall Rules</strong> - These are the rules used to style the wall feed.</li>
+		    <li><strong>Light Box styles</strong> - These are used to style the photo gallery light box.</li>
+		    <li><strong>Helper styles</strong> - These are used to display the photo grids in the Album and Photo Section.</li>
+		    </ol>
+             <p>Also in included is a minified version of all CSS jQueryFacebookWallWPLight.min.css. Use this  file instead of the unminified version to reduce load time and page weight.</p>
+<hr>
+		    
+<h3 id="javascript"><strong>JavaScript</strong> - <a href="#toc">top</a></h3>
+		    
+<p>All plugin javascript is located in <em>yourPluginsDirectory</em>/jQueryFacebookWallWPLight/js/. The plugin uses three javascript files:</p>
+		    <ul>
+            	<li><strong>*jQueryFacebookWall.js</strong> - This is where all the magic happens. This file makes all the data requests to Facebook, builds the wall, and manages all wall user interactions.</p>
+	    	  <li><strong>*ejs.js &amp; view.js</strong> - As mentioned before, the plugin uses ejs javascript templating. These files make up the templating engine</p>.
+		      <li><strong>jQueryFacebookWallLight.min.js</strong> minified javascript for the light version        
+		    </ul>
+            <p>*Also  included is a minified version of all javascript jQueryFacebookWall.min.js. Use this  file instead of the unminfied version to reduce load time and page weight.</p>
+<hr>
+		    
+		    <h3 id="credits"><strong>Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		    
+		    <p>I've used the following images, icons or other files as listed. You can find them in <em>yourPluginsDirectory</em>/jQueryFacebookWallWPLight/images/
+		      
+<ul>
+	          <li>fb-loading.gif - a generic 'spinner' loading .gif</li>
+		        <li>fbBig.gig - a large (32px x 32px) Facebook style square loading gif</li>
+		        <li>fbSmall.gif - a small (16px x 16px ) Facebook style square loading gif</li>
+		        <li>fbSprite.png - all of the various icons used in the plugin</li>
+            </ul>
+
+<hr>		    
+<h3 id="api"><strong>SHORTCODES / USAGE</strong> - <a href="#toc">top</a></h3>
+<p>jQueryFacebookWallWPLight has the following shortcode(s)</p>
+<ul>
+	<li><strong>[jfw_light show=jQueryFacebookWallLight]</strong> - adds a jqueryFacebookWall to a page or post.<code></code></li>
+</ul>
+<hr>	    
+<h3 id="plugin-options"><strong>Plugin Options</strong> - <a href="#toc">top</a></h3>
+		    <p>jQueryFacebookWallWPLight offers a multitude of settings so that you can tweak  it to get exactly what you want.</p>
+            <h4>Table column summary</h4>
+<table border="0" cellspacing="0" cellpadding="0" align="left">
+              <tr>
+                <td width="98" valign="top"><strong>Setting:</strong></td>
+                <td width="541" valign="top"><p>Name of the plugin option.</p></td>
+              </tr>
+              <tr>
+                <td width="98" valign="top"><p><strong>Type:</strong></p></td>
+                <td width="541" valign="top"><p>Data type of the setting. If the option is an    enumerated, type the possible values are listed in array style syntax i.e.,    [&lsquo;value 1&rsquo;, &lsquo;value 2&rsquo;]. </p></td>
+              </tr>
+              <tr>
+                <td width="98" valign="top"><p><strong>Required:</strong></p></td>
+                <td width="541" valign="top"><p>Defines if the option must be set; if &lsquo;yes&rsquo; then the    option value must be provided in the plugin instantiation call. If not yes,    the default value of the option is listed.</p></td>
+              </tr>
+              <tr>
+                <td width="98" valign="top"><p><strong>Description:</strong></p></td>
+                <td width="541" valign="top"><p>Description of the settings functional purpose.</p></td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+<p>&nbsp;</p>
+            <h4>jQueryFacebookWallWPLight plugin settings <a href="http://codecanyon.net/item/jqueryfacebookwall-wordpress/5574064"><b>Buy the Pro Version Here</b></a></h4>
+<table border="1" cellspacing="0" cellpadding="2" width="100%">
+              <tr>
+                <td width="20%" nowrap valign="top"><p><strong>Setting</strong></p></td>
+                <td width="19%" valign="top"><p><strong>Type</strong> (javascript)</p></td>
+                <td width="16%" valign="top"><p><strong>Required</strong></p></td>
+                <td width="45%" valign="top"><p><strong>Description</strong></p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>&nbsp;</p></td>
+                <td width="19%" valign="top"><p>&nbsp;</p></td>
+                <td width="16%" valign="top"><p>&nbsp;</p></td>
+                <td width="45%" valign="top"><p>&nbsp;</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>appId</p></td>
+                <td width="19%" valign="top"><p>string</p></td>
+                <td width="16%" valign="top"><p>yes</p></td>
+                <td width="45%" valign="top"><p>Facebook app id. <br>
+                </p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>domain</p></td>
+                <td width="19%" valign="top"><p>string</p></td>
+                <td width="16%" valign="top"><p>yes</p></td>
+                <td width="45%" valign="top"><p>Domain name where the plugin is used. i.e., <a href="http://www.ironlasso.com">www.ironlasso.com</a></p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>FacebookUser</p></td>
+                <td width="19%" valign="top"><p>string</p></td>
+                <td width="16%" valign="top"><p>yes</p></td>
+                <td width="45%" valign="top"><p>Your book account name.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>display</p></td>
+                <td width="19%" valign="top"><p>[&lsquo;timeline&rsquo;,'single-column,*&rsquo;wall&rsquo;]</p></td>
+                <td width="16%" valign="top"><p>timeline</p></td>
+                <td width="45%" valign="top"><p>The display style of the wall. See examples.<br>
+                  <a href="http://lc.ironlasso.com/jQueryFacebookWall/timeline.html">Timeline    style</a><br>
+                  <a href="http://lc.ironlasso.com/jQueryFacebookWall/wall.html">Wall    style</a></p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>posts.feedType</p></td>
+                <td width="19%" valign="top"><p>[&lsquo;feed&rsquo;,&rsquo;posts&rsquo;]</p></td>
+                <td width="16%" valign="top"><p>feed</p></td>
+                <td width="45%" valign="top"><p>Feed type defines if you would like to show the Facebook user's feed    (include posts from other users) or posts (only posts from Facebook user).</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*posts.limit</p></td>
+                <td width="19%" valign="top"><p>int</p></td>
+                <td width="16%" valign="top"><p>10</p></td>
+                <td width="45%" valign="top"><p>The max number of posts to retrieve from Facebook. Note: Facebook may    or may not return the max number of posts. Some posts get filtered for various    reasons (privacy, blocked user, region, etc.).</p>
+                <p><strong>light version is limited to 5 posts</strong></p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*comments.limit</p></td>
+                <td width="19%" valign="top"><p>int</p></td>
+                <td width="16%" valign="top"><p>100</p></td>
+                <td width="45%" valign="top"><p>Max number of comments returned from Facebook; 5000 is the max value Facebook    allows.</p>
+                <p><strong>light version is limited to 5 comments</strong></p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*comments.showAtStart</p></td>
+                <td width="19%" valign="top"><p>int, &lsquo;All&rsquo;</p></td>
+                <td width="16%" valign="top"><p>2</p></td>
+                <td width="45%" valign="top"><p>The number of comments to show when the wall first loads; use 'All' to    show all posts on load.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*comments.showMoreNum </p></td>
+                <td width="19%" valign="top"><p>int</p></td>
+                <td width="16%" valign="top"><p>50</p></td>
+                <td width="45%" valign="top"><p>The number of comments that will be revealed when the 'view more    comments' link is clicked for a story.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*likes.show</p></td>
+                <td width="19%" valign="top"><p>boolean</p></td>
+                <td width="16%" valign="top"><p>true</p></td>
+                <td width="45%" valign="top"><p>Show your Facebook account likes.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*likes.useCoverPhotos</p></td>
+                <td width="19%" valign="top"><p>boolean</p></td>
+                <td width="16%" valign="top"><p>false</p></td>
+                <td width="45%" valign="top"><p>Show only likes that have a cover photo defined, and use the cover    photo as the like image.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*likes.limit</p></td>
+                <td width="19%" valign="top"><p>int</p></td>
+                <td width="16%" valign="top"><p>5</p></td>
+                <td width="45%" valign="top"><p>The number of account likes to show.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*albums.show</p></td>
+                <td width="19%" valign="top"><p>boolean</p></td>
+                <td width="16%" valign="top"><p>true</p></td>
+                <td width="45%" valign="top"><p>Show your Facebook account albums.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*albums.limit</p></td>
+                <td width="19%" valign="top"><p>int</p></td>
+                <td width="16%" valign="top"><p>3</p></td>
+                <td width="45%" valign="top"><p>Number of albums to show.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*photos.show</p></td>
+                <td width="19%" valign="top"><p>boolean</p></td>
+                <td width="16%" valign="top"><p>true</p></td>
+                <td width="45%" valign="top"><p>Show your Facebook account photos.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*photos.type</p></td>
+                <td width="19%" valign="top"><p>[&lsquo;profile&rsquo;,&rsquo;uploaded&rsquo;,&rsquo;tagged&rsquo;]</p></td>
+                <td width="16%" valign="top"><p>uploaded</p></td>
+                <td width="45%" valign="top"><p>The type of photos to show in your photos Section. &lsquo;Uploaded&rsquo; shows    timeline photos, &lsquo;profile&rsquo; shows your profile pics, &lsquo;tagged&rsquo; shows photos you    have been tagged in.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*photos.numColumns</p></td>
+                <td width="19%" valign="top"><p>[&lsquo;2&rsquo;,&lsquo;3&rsquo;,&lsquo;4&rsquo;]</p></td>
+                <td width="16%" valign="top"><p>4</p></td>
+                <td width="45%" valign="top"><p>The number of image columns you want in the photos Section, you may    want to adjust the image height in jQueryFacebookWallWPLight.css =&gt; .Facebook-wall.timeline    .photos .photo-cover-photo-wrapper</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*photos.showAtStart</p></td>
+                <td width="19%" valign="top"><p>int</p></td>
+                <td width="16%" valign="top"><p>12</p></td>
+                <td width="45%" valign="top"><p>The total number of photo<a name="_GoBack"></a> thumbnail images to    show.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*photos.limit</p></td>
+                <td width="19%" valign="top"><p>int</p></td>
+                <td width="16%" valign="top"><p>25</p></td>
+                <td width="45%" valign="top"><p>The total number of photos to retrieve from Facebook.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*events.show</p></td>
+                <td width="19%" valign="top"><p>boolean</p></td>
+                <td width="16%" valign="top"><p>true</p></td>
+                <td width="45%" valign="top"><p>Show your Facebook account events.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*events.limit</p></td>
+                <td width="19%" valign="top"><p>int</p></td>
+                <td width="16%" valign="top"><p>10</p></td>
+                <td width="45%" valign="top"><p>Max number of events to retrieve from Facebook.</p></td>
+              </tr>
+              <tr>
+                <td width="20%" nowrap valign="top"><p>*debug</p></td>
+                <td width="19%" valign="top"><p>boolean</p></td>
+                <td width="16%" valign="top"><p>false</p></td>
+                <td width="45%" valign="top"><p>Print plugin    debugging info in the js console.</p></td>
+              </tr>
+            </table>
+<hr>
+            
+<h3 id="facebook"><strong>Getting Data from Facebook</strong> - <a href="#toc">top</a></h3>
+		    
+<p>jQueryFacebookWallWPLight use the Facebook's graph API to retrieve your Facebook account data. Facebook needs to know who is asking for and retrieving their data; consequently, they have an authentication system to manage these needs. One way to retrieve data in this authentication system is via a Facebook App. The App in turn can request an access token, and once an access token has been acquired it can make requests for data from the graph API. Long story short, jQueryFacebookWallWPLight needs three things to get your Facebook account data:</p>
+<ol>
+<li>Your Facebook User Name (Id)</li>
+<li>A Facebook App associated with your Facebook account</li>
+<li>An Access Token for your Facebook App</li>
+</ol>
+<h4 id="fb-account">Get your Facebook Username Name</h4>
+		    <p>Your Facebook username appears after the www.facebook.com/ in your browser URL. Usually it looks something like this: www.facebook.com/*yourUserName*. In other words, if you are Rick James, your Facebook URL looks something like: www.facebook.com/RickJames. Sometimes you have to look at your timeline to get your account name in the URL. </p>
+		    <p><img src="docImages/fbAccountName.png" style='width:500px'/></p>
+		    <p>Once you have your username *yourUserName* you add it to yourplugin settings on the jQueryFacebookWall settings page	in	the Facebook User field. </p>
+		    <p><code>
+		      </code>            </p>
+<h4 id='fb-app'>Create / Get your Facebook Account App Id/Key and Secret</h4>
+            <ol>
+            	<li>Log into your Facebook Account.</li>
+                <li>Go to <a href="https://developers.Facebook.com/apps">https://developers.Facebook.com/apps</a>
+                	<ol>
+                    	<li>If you have not registered with Facebook as a developer, do so.</li>
+                        <li>Click the Create New App button in the upper right hand corner to create a Facebook App.</li>
+                        <li>Fill out your App info, name, etc. The name is the only necessary field.</li>
+                    </ol>
+                </li>
+                <li>Make note of your App Id/API key and App Secret they will be used to generate you Facebook Access Token.</li>
+                <li>Use your App Id/API key for 'yourAppId' in the plugin call.</li>
+            </ol>
+<p><img src="docImages/fbApp.png" style='width:750px'/><code></code> </p>
+<h4 id='fb-access-token'>&nbsp;</h4>
+<h4>Get your Facebook Access Token</h4>
+            <p>You should be able to retrieve an Access Token via the setting page, if you cant your can try running the jQueryFacebookWallWPLight php access token retrieval script by hand. To use it:</p>
+            <ol>
+            	<li>Open fb_get_app_token.php and enter your Facebook App Id and Secret on lines 19&20.
+                  <pre>
+                	<code>
+15	$app_id = '----------------';
+16 $app_secret = '----------------';
+                    </code>
+                </pre>
+                </li>
+                <li>Save and exit the file.</li>
+                <li>Generate a Facebook access token for your Facebook App by running  fb_get_app_token.php in your browser. If you have unzipped the plugin and put it in, say, yourDomainWebRoot/jQueryFacebooWall/, then in your browser open www.yourdomain.com/fb_get_app_token.php </li>
+            	<li>fb_get_app_token.php will retrieve an access token from Facebook and write it to the fb_app_token.php file. Make sure that fb_app_token.php has full write permissions.</li>
+            	<li>Open fb_app_token.php - it should contain something that looks like this: {"appToken":"2450 blahblahblahblahblah|fkLcyxj6C-_blahblahblahblahblah"}</li>
+            	<li>If it doesn't, you didn’t get an access token from Facebook. An alternative method of retrieving an App access token is running www.yourdomain.com/fb_get_app_token.php?debug=true This will show debugging information for the script. If it returns an access token, copy and paste it into fb_app_token.php</li>
+            </ol>
+<p>
+            	<img src="docImages/fbAccessToken.png" style="width:750px" /> 
+            </p>
+            <p>* To generate an App access token via the fb_get_app_token.php script, php must have https wrapper enabled. In your php.ini ;extension=php_openssl.dll must be uncommented. If you can’t do this you may have to contact your hosting provider or system administrator.</p>
+            <h4>Get your Facebook Access Token - Without php</h4>
+            <p>If your host doesn't support php, you don't have php's https wrappers enabled, or you just like doing things by hand, you can retrieve a Facebook access token by the following means:</p>
+            <ol>
+            	<li>In the URL below, replace app_secret and app_secret with the App Id and App Secret you retrieved from Facebook in the previous step   </li>
+                <li>https://graph.facebook.com/oauth/access_token?client_id=app_id&client_secret=app_secret&grant_type=client_credentials</li>
+                <li>Copy and past the URL in your browser and Facebook will return an App access token to you. It will be something like:  access_token=256518697824517|nLKpMxbgiABaYfjhSSHf1GJj</li>
+            	<li>
+                Open the fb_app_token.html The contents look like this:<br />
+                {"appToken":"If you see this you haven't generated your App token yet"} <br /> 
+                Replace the "If you see this you haven't generated your App token yet" with the access_token you retrieved from Facebook. Make sure to leave the quotes.
+                <br />
+                It should looks like this when your done:
+                <br /> {"appToken":"256518697824517|nLKpMxbgiABaYfjhSSHf1GJj"}
+                </li>
+                <li>Save and close fb_app_token.html</li>
+            </ol>
+		    
+<h4 id="fb-pages">Facebook Pages vs. Facebook User Accounts</h4>
+            <p>
+            jQueryFacebookWallWPLight plugin makes use of Facebook’s open graph API, which has various levels of authentication requirements. Facebook pages have looser restrictions than user accounts; therefore, the plugin can retrieve more info (posts and album data) for pages than normal accounts. jQueryFacebookWallWPLight will work with normal accounts, but you will not be able to retrieve album data and you will have to edit the permissions of your posts and photos in your Facebook account. If you don’t have a Facebook page, you should consider creating one. You can do so by logging into Facebook and going here: https://www.Facebook.com/pages/create/
+</p>
+<p>Here are the caveats imposed by Facebook’s authentication requirements:</p>
+            <ul>
+            	<li>Pages can have albums.</li>
+                <li>Pages can show all posts.</li>
+                <li>User accounts can’t have albums.</li>
+                <li>User accounts don’t include all posts.</li>
+            </ul>
+<hr />            
+<h3 id="#IIS"><strong>Using the plugin on Windows IIS</strong> - <a href="#toc">top</a></h3>
+
+<p>
+Yes can use the pluging with ASP and IIS! It takes few extra set up steps. You'll need to add .ejs mime types to IIS.
+</p>
+<p>
+IIS doesn’t like the file extension of the ejs javascript templateing engine used by the plugin (.ejs). You need to add a MIME extension for .ejs with type :text/html in your IIS administration panel. If you do that everything should work . Here is an blog I found on the subject
+</p>
+<p>
+The problem: <a href="http://forums.asp.net/t/1442319.aspx/1">http://forums.asp.net/t/1442319.aspx/1</a>
+</p>
+<p>
+How to add a mime type in IIS: <a href="http://technet.microsoft.com/en-us/library/cc725608(v=ws.10).aspx">http://technet.microsoft.com/en-us/library/cc725608(v=ws.10).aspx</a>            
+</p>
+<hr>
+		    
+		    <p>Once again, thank you so much for downloading this plugin. As I said at the beginning, I'd be glad to help you if you have any questions relating to this plugin. You can ask me question <a href="http://ironlasso.com/contact-2/">at my site</a>. No guarantees, but I'll do my best to assist.</p> 
+		    
+		    <p class="append-bottom alt large"><strong>Lorenzo Gangi</strong></p>
+		    <p><a href="#toc">Go To Table of Contents</a></p>
+		    
+		    
+		    <hr class="space">
+		    </div><!-- end d                    
